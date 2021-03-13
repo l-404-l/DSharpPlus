@@ -15,19 +15,14 @@ namespace DSharpPlus.EventArgs
         public DiscordGuild Guild { get; internal set; }
 
         /// <summary>
-        /// Gets a collection containing post-update roles.
+        /// Gets the member that was updated.
         /// </summary>
-        public IReadOnlyList<DiscordRole> RolesAfter { get; internal set; }
+        public DiscordMember Member { get; internal set; }
 
         /// <summary>
         /// Gets a collection containing pre-update roles.
         /// </summary>
         public IReadOnlyList<DiscordRole> RolesBefore { get; internal set; }
-
-        /// <summary>
-        /// Gets the member's new nickname.
-        /// </summary>
-        public string NicknameAfter { get; internal set; }
 
         /// <summary>
         /// Gets the member's old nickname.
@@ -40,24 +35,9 @@ namespace DSharpPlus.EventArgs
         public bool? PendingBefore { get; internal set; }
 
         /// <summary>
-        /// Gets whether the member had passed membership screening after the update
-        /// </summary>
-        public bool? PendingAfter { get; internal set; }
-
-        /// <summary>
         /// Gets whether the member had PremiumSince before the update
         /// </summary>
         public DateTimeOffset? PremiumSinceBefore { get; internal set; }
-
-        /// <summary>
-        /// Gets whether the member had PremiumSince after the update
-        /// </summary>
-        public DateTimeOffset? PremiumSinceAfter { get; internal set; }
-
-        /// <summary>
-        /// Gets the member that was updated.
-        /// </summary>
-        public DiscordMember Member { get; internal set; }
 
         internal GuildMemberUpdateEventArgs() : base() { }
     }
