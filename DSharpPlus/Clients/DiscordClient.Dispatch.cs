@@ -970,6 +970,7 @@ namespace DSharpPlus
 
             var nick_old = mbr.Nickname;
             var pending_old = mbr.IsPending;
+            var premiumsince_old = mbr.PremiumSince;
             var roles_old = new ReadOnlyCollection<DiscordRole>(new List<DiscordRole>(mbr.Roles));
 
             mbr.Nickname = nick;
@@ -985,10 +986,12 @@ namespace DSharpPlus
                 NicknameAfter = mbr.Nickname,
                 RolesAfter = new ReadOnlyCollection<DiscordRole>(new List<DiscordRole>(mbr.Roles)),
                 PendingAfter = mbr.IsPending,
+                PremiumSinceAfter = mbr.PremiumSince,
 
                 NicknameBefore = nick_old,
                 RolesBefore = roles_old,
                 PendingBefore = pending_old,
+                PremiumSinceBefore = premiumsince_old,
             };
             await this._guildMemberUpdated.InvokeAsync(this, ea).ConfigureAwait(false);
         }

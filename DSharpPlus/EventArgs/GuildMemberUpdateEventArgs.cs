@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DSharpPlus.Entities;
 
 namespace DSharpPlus.EventArgs
@@ -42,6 +43,16 @@ namespace DSharpPlus.EventArgs
         /// Gets whether the member had passed membership screening after the update
         /// </summary>
         public bool? PendingAfter { get; internal set; }
+
+        /// <summary>
+        /// Gets whether the member had PremiumSince before the update
+        /// </summary>
+        public DateTimeOffset? PremiumSinceBefore { get; internal set; }
+
+        /// <summary>
+        /// Gets whether the member had PremiumSince after the update
+        /// </summary>
+        public DateTimeOffset? PremiumSinceAfter { get; internal set; }
 
         /// <summary>
         /// Gets the member that was updated.
